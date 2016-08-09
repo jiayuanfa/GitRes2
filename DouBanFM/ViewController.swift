@@ -11,6 +11,8 @@ import MediaPlayer
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,HttpProtocol,ChannerDelegate {
 
+    @IBOutlet weak var playButton: UIImageView!
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
     @IBOutlet weak var songImageView: UIImageView!
     @IBOutlet weak var songListTableView: UITableView!
     @IBOutlet weak var songProgressView: UIProgressView!
@@ -42,6 +44,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // 获取频道数据 传递给下个界面
         httpRequest.onResearch(channelUrl)
+        
+        // 添加手势
+        songImageView.addGestureRecognizer(tapGesture)
+    }
+    
+    @IBAction func onTap(sender: UITapGestureRecognizer) {
+        if sender.view == playButton{
+            playButton.hidden = true
+            audioPlayer.play()
+            playButton.removeGestureRecognizer(tapGesture)
+            songImageView.addGestureRecognizer(tapGesture)
+        }else{
+            playButton.hidden = false
+            audioPlayer.pause()
+            playButton.addGestureRecognizer(tapGesture)
+            songImageView.removeGestureRecognizer(tapGesture)
+        }
     }
     
     // 跳转的时候设置代理
@@ -129,8 +148,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50
+    }
+    
     //MARK:播放歌曲
     func onSetAudio(url:String){
+        
+        playButton.removeGestureRecognizer(tapGesture)
+        songImageView.addGestureRecognizer(tapGesture)
+        playButton.hidden = true
+        
         self.audioPlayer.pause()
         let URL = NSURL(string: url)
         self.audioPlayer.contentURL = URL
@@ -139,7 +167,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //MARK:计时器
 //        timer?.invalidate()
             self.playTime?.text = "00:00"
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: #selector(self.updateSongDuration), userInfo: nil, repeats: true)
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: (#selector(ViewController.updateSongDuration)), userInfo: nil, repeats: true)
             self.timer!.fire()
     }
     
@@ -152,6 +180,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let currentTime = self.audioPlayer.currentPlaybackTime
         print("当前播放时间为:\(currentTime)")
         if currentTime > 0.0{
+            let totalTime = self.audioPlayer.duration
+            let progress:Float = Float(currentTime/totalTime)
+            songProgressView.setProgress(progress, animated: true)
+            
+            // 获取当前时间的整形
+            let total:Int = Int(currentTime)
+            // 对60取整  则为分钟数
+            let minites:Int = Int(total/60)
+            // 对60取余 则为秒数
+            let sec:Int = total % 60
+            
+            var time:String = ""
+            // 分钟小于10 左边补0加冒号 反之直接赋值加冒号
+            if minites < 10{
+                time = "0\(minites):"
+            }else{
+                time = "\(minites):"
+            }
+            
+            // 分钟+秒钟小于10 补0 反之直接相加
+            if sec < 10{
+                time += "0\(sec)"
+            }else{
+                time += "\(sec)"
+            }
+            
+            playTime.text = time
         }
     }
     

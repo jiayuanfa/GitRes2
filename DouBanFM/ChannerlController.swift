@@ -22,10 +22,8 @@ class ChannerlController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        
+        self.channelTableView.tableHeaderView = UIView()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +44,7 @@ class ChannerlController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let channelId = rowData["channel_id"]!
         let channelIdStr = "channel=\(channelId)"
         self.delegate?.onChangeChannel(channelIdStr)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {

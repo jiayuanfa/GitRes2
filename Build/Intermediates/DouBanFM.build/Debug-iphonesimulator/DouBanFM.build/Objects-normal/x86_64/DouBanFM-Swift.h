@@ -94,6 +94,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
 @import ObjectiveC;
+@import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -126,7 +127,6 @@ SWIFT_CLASS("_TtC8DouBanFM18ChannerlController")
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified channelTableView;
 @property (nonatomic, strong) NSArray * _Nonnull channelData;
 - (void)viewDidLoad;
-- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
@@ -142,6 +142,7 @@ SWIFT_CLASS("_TtC8DouBanFM17HttpRequsetHelper")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITapGestureRecognizer;
 @class NSMutableDictionary;
 @class MPMoviePlayerController;
 @class NSTimer;
@@ -154,6 +155,8 @@ SWIFT_CLASS("_TtC8DouBanFM17HttpRequsetHelper")
 
 SWIFT_CLASS("_TtC8DouBanFM14ViewController")
 @interface ViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified playButton;
+@property (nonatomic, strong) IBOutlet UITapGestureRecognizer * _Null_unspecified tapGesture;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified songImageView;
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified songListTableView;
 @property (nonatomic, weak) IBOutlet UIProgressView * _Null_unspecified songProgressView;
@@ -168,6 +171,7 @@ SWIFT_CLASS("_TtC8DouBanFM14ViewController")
 @property (nonatomic, strong) MPMoviePlayerController * _Nonnull audioPlayer;
 @property (nonatomic, strong) NSTimer * _Nullable timer;
 - (void)viewDidLoad;
+- (IBAction)onTap:(UITapGestureRecognizer * _Nonnull)sender;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (void)onChangeChannel:(NSString * _Nonnull)channelId;
 - (void)didReceiveResults:(NSDictionary * _Nonnull)results;
@@ -176,6 +180,7 @@ SWIFT_CLASS("_TtC8DouBanFM14ViewController")
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView willDisplayCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)onSetAudio:(NSString * _Nonnull)url;
 - (void)updateSongDuration;
 - (void)onSetImage:(NSString * _Nonnull)url;
