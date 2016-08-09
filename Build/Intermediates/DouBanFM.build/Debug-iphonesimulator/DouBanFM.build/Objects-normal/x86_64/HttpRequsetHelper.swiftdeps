@@ -11,21 +11,22 @@ provides-member:
 provides-dynamic-lookup:
 - "onResearch"
 depends-top-level:
-- !private "NSURLRequest"
-- "NSObject"
-- !private "dispatch_async"
-- !private "dispatch_get_main_queue"
-- "HttpProtocol"
 - "HttpRequsetHelper"
-- !private "NSJSONSerialization"
-- !private "NSURLSession"
-- "NSDictionary"
-- "String"
-- !private "NSJSONReadingOptions"
-- !private "NSError"
-- !private "NSURL"
 - "StringLiteralType"
+- "NSObject"
+- !private "NSURL"
 - !private "print"
+- !private "NSError"
+- !private "NSURLSession"
+- !private "NSJSONReadingOptions"
+- "NSDictionary"
+- "HttpProtocol"
+- !private "NSJSONSerialization"
+- !private "!="
+- "String"
+- !private "dispatch_get_main_queue"
+- !private "dispatch_async"
+- !private "NSURLRequest"
 depends-member:
 - !private ["Ps9AnyObject", "JSONObjectWithData"]
 - !private ["Ps9AnyObject", "NSJSONReadingOptions"]
@@ -44,7 +45,10 @@ depends-member:
 - !private ["Ps9AnyObject", "sharedSession"]
 - ["Ps9AnyObject", ""]
 - !private ["Ps23ArrayLiteralConvertible", "MutableContainers"]
+- !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["Sb", "deinit"]
+- !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
 - !private ["Ps11CVarArgType", "JSONObjectWithData"]
 - !private ["Ps11CVarArgType", "NSJSONReadingOptions"]
 - !private ["Ps11CVarArgType", "NSJSONSerialization"]
@@ -85,6 +89,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "NSURL"]
 - !private ["Ps23CustomStringConvertible", "NSURLRequest"]
 - !private ["Ps23CustomStringConvertible", "NSURLSession"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "dataTaskWithRequest"]
 - ["Ps23CustomStringConvertible", "delegate"]
 - !private ["Ps23CustomStringConvertible", "dispatch_async"]
@@ -103,6 +108,7 @@ depends-member:
 - !private ["Ps9Equatable", "NSURL"]
 - !private ["Ps9Equatable", "NSURLRequest"]
 - !private ["Ps9Equatable", "NSURLSession"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "dataTaskWithRequest"]
 - ["Ps9Equatable", "delegate"]
 - !private ["Ps9Equatable", "dispatch_async"]
@@ -121,6 +127,7 @@ depends-member:
 - !private ["Ps8Hashable", "NSURL"]
 - !private ["Ps8Hashable", "NSURLRequest"]
 - !private ["Ps8Hashable", "NSURLSession"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "dataTaskWithRequest"]
 - ["Ps8Hashable", "delegate"]
 - !private ["Ps8Hashable", "dispatch_async"]
@@ -223,17 +230,23 @@ depends-member:
 - !private ["Vs5UInt8", "deinit"]
 - !private ["Sc", "deinit"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
+- !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
 - !private ["Ps32_BuiltinStringLiteralConvertible", "init"]
 - !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "init"]
 - !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "init"]
 - !private ["Ps32_FileReferenceLiteralConvertible", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Vs26_OptionalNilComparisonType", "deinit"]
+- !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
 - !private ["Ps12_Reflectable", "init"]
 depends-nominal:
 - "Ps9AnyObject"
 - !private "Ps23ArrayLiteralConvertible"
 - !private "Sb"
+- !private "Ps25BooleanLiteralConvertible"
+- !private "Ps11BooleanType"
 - "Ps11CVarArgType"
 - !private "Vs9Character"
 - !private "Ps10Comparable"
@@ -283,12 +296,14 @@ depends-nominal:
 - !private "Vs5UInt8"
 - !private "Sc"
 - !private "Ps31UnicodeScalarLiteralConvertible"
+- !private "Ps33_BuiltinBooleanLiteralConvertible"
 - !private "Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible"
 - !private "Ps32_BuiltinStringLiteralConvertible"
 - !private "Ps37_BuiltinUTF16StringLiteralConvertible"
 - !private "Ps39_BuiltinUnicodeScalarLiteralConvertible"
 - !private "Ps32_FileReferenceLiteralConvertible"
 - !private "Ps21_ObjectiveCBridgeable"
+- !private "Vs26_OptionalNilComparisonType"
 - !private "Ps12_Reflectable"
 depends-dynamic-lookup:
 depends-external:

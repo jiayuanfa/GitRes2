@@ -24,8 +24,10 @@ class HttpRequsetHelper: NSObject {
                 print("data is \(data)")
                 dispatch_async(dispatch_get_main_queue(), {
                 do{
+                    if (data != nil){
                         let resultDict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                         self.delegate?.didReceiveResults(resultDict)
+                    }
                 }
                 catch let error as NSError{
                     print("error is \(error)")
