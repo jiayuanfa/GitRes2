@@ -14,6 +14,8 @@
 		2E14287C1D54E7BC000A9754 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E14287A1D54E7BC000A9754 /* LaunchScreen.storyboard */; };
 		2E1428871D54E7BC000A9754 /* DouBanFMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1428861D54E7BC000A9754 /* DouBanFMTests.swift */; };
 		2E1428921D54E7BC000A9754 /* DouBanFMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1428911D54E7BC000A9754 /* DouBanFMUITests.swift */; };
+		2E1428A01D54E8AA000A9754 /* ChannerlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E14289F1D54E8AA000A9754 /* ChannerlController.swift */; };
+		2E1428A21D54EE5B000A9754 /* HttpRequsetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1428A11D54EE5B000A9754 /* HttpRequsetHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		2E14288D1D54E7BC000A9754 /* DouBanFMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DouBanFMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1428911D54E7BC000A9754 /* DouBanFMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DouBanFMUITests.swift; sourceTree = "<group>"; };
 		2E1428931D54E7BC000A9754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E14289F1D54E8AA000A9754 /* ChannerlController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannerlController.swift; sourceTree = "<group>"; };
+		2E1428A11D54EE5B000A9754 /* HttpRequsetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequsetHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				2E1428711D54E7BC000A9754 /* AppDelegate.swift */,
 				2E1428731D54E7BC000A9754 /* ViewController.swift */,
+				2E14289F1D54E8AA000A9754 /* ChannerlController.swift */,
+				2E1428A11D54EE5B000A9754 /* HttpRequsetHelper.swift */,
 				2E1428751D54E7BC000A9754 /* Main.storyboard */,
 				2E1428781D54E7BC000A9754 /* Assets.xcassets */,
 				2E14287A1D54E7BC000A9754 /* LaunchScreen.storyboard */,
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E1428741D54E7BC000A9754 /* ViewController.swift in Sources */,
+				2E1428A01D54E8AA000A9754 /* ChannerlController.swift in Sources */,
 				2E1428721D54E7BC000A9754 /* AppDelegate.swift in Sources */,
+				2E1428A21D54EE5B000A9754 /* HttpRequsetHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
