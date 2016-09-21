@@ -1,0 +1,8 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "36ca2974a60da3cffa65f28c21648831"
+build_time: [524077022, 131908000]
+inputs:
+  "/Users/apple/Desktop/DouBanFM/DouBanFM/ViewController.swift": [524076929, 0]
+  "/Users/apple/Desktop/DouBanFM/DouBanFM/ChannerlController.swift": [524077021, 0]
+  "/Users/apple/Desktop/DouBanFM/DouBanFM/AppDelegate.swift": [523726012, 0]
+  "/Users/apple/Desktop/DouBanFM/DouBanFM/HttpRequsetHelper.swift": [524039891, 0]
